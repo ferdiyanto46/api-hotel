@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->unsignedBigInteger('hotel_id')->nullable()->after('role');
+            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('set null');
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropForeign(['hotel_id']);
+            $table->dropColumn('hotel_id');
         });
     }
 };
