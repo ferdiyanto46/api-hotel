@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('city');
+            $table->text('address');
+            $table->text('description')->nullable(); // Nullable: opsional saat store
+            $table->decimal('rating', 2, 1)->nullable();
+            $table->string('img_url')->nullable();
             $table->timestamps();
         });
     }

@@ -16,3 +16,15 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+// === Rute Autentikasi (Publik) ===
+$router->group(['prefix' => 'auth'], function () use ($router) {
+    $router->post('/register', 'AuthController@register'); // Registrasi customer
+    $router->post('/login', 'AuthController@login');
+
+    // Hanya Super Admin yang bisa mendaftarkan Admin baru
+    $router->post('/register-admin', [
+        'middleware' => ['auth', 'role:super-admin'],
+        'uses'       => 'AuthController@registerAdmin',
+    ]);
+});

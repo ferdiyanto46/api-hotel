@@ -39,4 +39,4 @@ class Payment extends Model
         $this->update(['status' => 'failed']);
         $this->booking->update(['status' => 'failed']);
     }
-}
+} 
