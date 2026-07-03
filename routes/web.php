@@ -28,3 +28,27 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
         'uses'       => 'AuthController@registerAdmin',
     ]);
 });
+
+$router->group(['middleware' => 'auth'], function () use ($router){
+
+    // route khusus Admin dan Super Admin
+    $router->group(['middleware' => 'role:admin,super-admin'],function () use ($router){
+        $router->put('/hotels/{id}', 'HotelController@update');
+        $router->delete('/hotels/{id}', 'HotelController@destroy');
+
+
+        $router->post('/rooms', 'RoomController@store');
+        $router->put('/rooms/{id}', 'RoomController@update');
+        $router->delete('/rooms/{id}', 'RoomController@destroy');
+    });
+
+    $router->group(['middleware' => 'role:super-admin'], function () use ($router){
+        $router->post('/hotels', 'HotelController@store');
+    });
+
+});
+
+$router->get('/hotels', 'HotelController@index');            // Daftar + filter: ?search=...&city=...
+$router->get('/hotels/{id}', 'HotelController@showById');
+$router->get('/rooms', 'RoomController@index');              // Filter: ?status=available&room_type_id=1
+$router->get('/rooms/{id}', 'RoomController@show');
