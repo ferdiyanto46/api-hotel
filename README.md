@@ -1,4 +1,4 @@
-# 🏨 Hotel Booking REST API
+# Hotel Booking REST API
 
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white" />
@@ -13,7 +13,7 @@ RESTful API untuk sistem manajemen dan pemesanan hotel, dibangun menggunakan **L
 
 ---
 
-## 📋 Daftar Isi
+##  Daftar Isi
 
 - [Fitur](#-fitur)
 - [Tech Stack](#-tech-stack)
@@ -29,20 +29,20 @@ RESTful API untuk sistem manajemen dan pemesanan hotel, dibangun menggunakan **L
 
 ---
 
-## ✨ Fitur
+## Fitur
 
-- 🔐 **Autentikasi JWT** — Register, Login, dan proteksi endpoint berbasis token
-- 👥 **Role-Based Access Control** — Super Admin, Admin, dan Customer
-- 🏨 **Manajemen Hotel** — CRUD hotel dengan fitur pencarian dan filter
-- 🛏️ **Manajemen Kamar & Tipe Kamar** — Pengelolaan kamar beserta tipe dan ketersediaan
-- 📅 **Sistem Pemesanan** — Checkout, riwayat, dan detail booking
-- 💳 **Integrasi Midtrans** — Pembayaran online dengan webhook notifikasi otomatis
-- 🔁 **Retry Payment** — Bayar ulang booking yang masih pending
-- 📊 **Overview Dashboard** — Ringkasan data hotel untuk Super Admin
+-  **Autentikasi JWT** — Register, Login, dan proteksi endpoint berbasis token
+- **Role-Based Access Control** — Super Admin, Admin, dan Customer
+- **Manajemen Hotel** — CRUD hotel dengan fitur pencarian dan filter
+- **Manajemen Kamar & Tipe Kamar** — Pengelolaan kamar beserta tipe dan ketersediaan
+- **Sistem Pemesanan** — Checkout, riwayat, dan detail booking
+- **Integrasi Midtrans** — Pembayaran online dengan webhook notifikasi otomatis
+- **Retry Payment** — Bayar ulang booking yang masih pending
+- **Overview Dashboard** — Ringkasan data hotel untuk Super Admin
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Teknologi | Versi | Keterangan |
 |-----------|-------|------------|
@@ -55,7 +55,7 @@ RESTful API untuk sistem manajemen dan pemesanan hotel, dibangun menggunakan **L
 
 ---
 
-## ⚙️ Persyaratan Sistem
+## Persyaratan Sistem
 
 - **PHP** >= 8.1 (dengan ekstensi: `mbstring`, `openssl`, `pdo`, `pdo_mysql`)
 - **Composer** >= 2.x
@@ -64,7 +64,7 @@ RESTful API untuk sistem manajemen dan pemesanan hotel, dibangun menggunakan **L
 
 ---
 
-## 🚀 Instalasi
+## Instalasi
 
 ### 1. Clone Repositori
 
@@ -145,7 +145,7 @@ MIDTRANS_IS_PRODUCTION=false  # Gunakan true untuk production
 
 ---
 
-## ▶️ Menjalankan Aplikasi
+## Menjalankan Aplikasi
 
 ### Development (Laragon / Built-in Server)
 
@@ -161,7 +161,7 @@ http://api-hotel.test
 
 ---
 
-## 📖 Dokumentasi API
+## Dokumentasi API
 
 ### Base URL
 ```
@@ -170,7 +170,7 @@ http://localhost:8000
 
 ---
 
-### 🔑 Autentikasi
+### Autentikasi
 
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
@@ -205,7 +205,7 @@ Content-Type: application/json
 
 ---
 
-### 🏨 Hotel
+### Hotel
 
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
@@ -218,7 +218,7 @@ Content-Type: application/json
 
 ---
 
-### 🛏️ Tipe Kamar
+### Tipe Kamar
 
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
@@ -230,7 +230,7 @@ Content-Type: application/json
 
 ---
 
-### 🚪 Kamar
+### Kamar
 
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
@@ -242,7 +242,7 @@ Content-Type: application/json
 
 ---
 
-### 📅 Pemesanan
+### Pemesanan
 
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
@@ -253,7 +253,7 @@ Content-Type: application/json
 
 ---
 
-### 💳 Pembayaran (Midtrans Webhook)
+### Pembayaran (Midtrans Webhook)
 
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
@@ -261,7 +261,7 @@ Content-Type: application/json
 
 ---
 
-### 👤 Manajemen Akun (Super Admin)
+### Manajemen Akun (Super Admin)
 
 | Method | Endpoint | Deskripsi | Auth |
 |--------|----------|-----------|------|
@@ -272,7 +272,7 @@ Content-Type: application/json
 
 ---
 
-## 👥 Role & Hak Akses
+## Role & Hak Akses
 
 | Role | Deskripsi |
 |------|-----------|
@@ -282,7 +282,7 @@ Content-Type: application/json
 
 ---
 
-## 🗄️ Struktur Database
+## Struktur Database
 
 ```
 users         — Data pengguna (id, name, email, password, role, hotel_id)
@@ -295,7 +295,7 @@ payments      — Pembayaran (id, booking_id, amount, status, midtrans_token, ds
 
 ---
 
-## 📁 Struktur Proyek
+## Struktur Proyek
 
 ```
 api-hotel/
@@ -329,7 +329,7 @@ api-hotel/
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
 
