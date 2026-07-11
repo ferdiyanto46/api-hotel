@@ -40,12 +40,23 @@ $router->group(['middleware' => 'auth'], function () use ($router){
         $router->post('/rooms', 'RoomController@store');
         $router->put('/rooms/{id}', 'RoomController@update');
         $router->delete('/rooms/{id}', 'RoomController@destroy');
-    });
 
+        $router->post('/room-types', 'RoomTypeController@store');
+        $router->put('/room-types/{id}', 'RoomTypeController@update');
+        $router->post('/rooms/{id}', 'RoomController@update'); 
+        $router->delete('/room-types/{id}', 'RoomTypeController@destroy');
+    });
+    // route khusus Super Admin
     $router->group(['middleware' => 'role:super-admin'], function () use ($router){
         $router->post('/hotels', 'HotelController@store');
+        $router->get('/hotels/overview', 'HotelController@overview');
     });
 
+    // route khusus Customer
+    $router->post('/bookings/checkout', 'BookingController@checkout');
+    $router->post('/bookings/{id}/pay', 'BookingController@retryPayment'); // Bayar ulang booking pending
+    $router->get('/bookings', 'BookingController@index');
+    $router->get('/bookings/{id}', 'BookingController@show');
 });
 
 $router->get('/hotels', 'HotelController@index');            // Daftar + filter: ?search=...&city=...
@@ -54,3 +65,5 @@ $router->get('/rooms', 'RoomController@index');              // Filter: ?status=
 $router->get('/rooms/{id}', 'RoomController@show');
 $router->get('/room-types', 'RoomTypeController@index');
 $router->get('/room-types/{id}', 'RoomTypeController@show');
+
+$router->post('/midtrans/notification', 'BookingController@handleNotification');
