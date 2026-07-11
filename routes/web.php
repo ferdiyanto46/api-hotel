@@ -52,3 +52,5 @@ $router->get('/hotels', 'HotelController@index');            // Daftar + filter:
 $router->get('/hotels/{id}', 'HotelController@showById');
 $router->get('/rooms', 'RoomController@index');              // Filter: ?status=available&room_type_id=1
 $router->get('/rooms/{id}', 'RoomController@show');
+$router->get('/room-types', 'RoomTypeController@index');
+$router->get('/room-types/{id}', 'RoomTypeController@show');
