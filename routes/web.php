@@ -50,6 +50,11 @@ $router->group(['middleware' => 'auth'], function () use ($router){
     $router->group(['middleware' => 'role:super-admin'], function () use ($router){
         $router->post('/hotels', 'HotelController@store');
         $router->get('/hotels/overview', 'HotelController@overview');
+
+        $router->get('/accounts', 'AccountController@index');
+        $router->get('/accounts/{id}', 'AccountController@show');
+        $router->put('/accounts/{id}', 'AccountController@update');
+        $router->delete('/accounts/{id}', 'AccountController@destroy');
     });
 
     // route khusus Customer
